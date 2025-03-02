@@ -124,7 +124,7 @@ export async function logoutAccount() {
 			message: "Successfully logged out",
 		};
 	} catch (error) {
-		console.log("Failed to login account", error);
+		console.log("Failed to logout account", error);
 		throw error;
 	}
 }
