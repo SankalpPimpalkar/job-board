@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { createAccountForApplicant } from "../../../appwrite/functions";
+import { account } from "../../../appwrite/config"; // Import Appwrite client
+import toast from "react-hot-toast";
 
 export default function CreateApplicant() {
   const [formData, setFormData] = useState({
@@ -8,13 +12,36 @@ export default function CreateApplicant() {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Applicant Sign-Up Form Submitted:", formData);
+
+    try {
+      
+      await account.deleteSessions().catch(() => {});
+
+    
+      const response = await createAccountForApplicant(formData);
+
+      if (response.success) {
+        toast.success("Account created successfully! Redirecting to login...");
+        setTimeout(() => navigate("/auth/login"), 1500); // Delay for smooth UX
+      } else {
+        toast.error(response.message || "Failed to create applicant account.");
+      }
+    } catch (error) {
+      if (error.message.includes("Unauthorized")) {
+        toast.error("You are not authorized to perform this action.");
+      } else {
+        toast.error("An error occurred. Please try again.");
+      }
+      console.error("Error creating Applicant account:", error);
+    }
   };
 
   return (
@@ -73,10 +100,11 @@ export default function CreateApplicant() {
           />
         </div>
         <button
-		 type="submit"
-		 className="w-full font-medium bg-inidgo-light text-white py-2 rounded-md hover:bg-inidgo-light/90 transition-colors">
-				 Sign Up
-		</button>
+          type="submit"
+          className="w-full font-medium bg-inidgo-light text-white py-2 rounded-md hover:bg-inidgo-light/90 transition-colors"
+        >
+          Sign Up
+        </button>
       </form>
     </div>
   );
