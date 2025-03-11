@@ -3,7 +3,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom"; // Assuming you're using React Router for navigation
 
 export default function CreateAccount() {
-
 	return (
 		<div className="border border-dark-gray/20 p-6 rounded-md w-full max-w-lg mx-auto">
 			<h1 className="text-2xl font-bold text-dark-gray mb-4">
