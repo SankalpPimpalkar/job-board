@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // For navigation
+import { createAccountForCompany } from "../../../appwrite/functions";
+import toast from "react-hot-toast"; // For success/error messages
 
 export default function CreateCompany() {
   const [formData, setFormData] = useState({
@@ -10,18 +13,35 @@ export default function CreateCompany() {
     password: "",
   });
 
+  const navigate = useNavigate(); // Initialize navigation
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    try {
+      const response = await createAccountForCompany (formData);
+
+      if (response.success) {
+        toast.success("Company created successfully! Please log in.");
+        navigate("/auth/login"); // Redirect to Login page
+      } else {
+        toast.error(response.message || "Failed to create company account.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+      console.error("Error creating company:", error);
+    }
   };
 
   return (
     <div className="border border-dark-gray/20 p-5 rounded-md w-full max-w-lg">
-      <h2 className="text-2xl font-bold text-dark-gray mb-4"> Sign Up Create Company</h2>
+      <h2 className="text-2xl font-bold text-dark-gray mb-4">
+        Sign Up Create Company
+      </h2>
       <p className="text-sm mb-4 text-dark-gray/80">
         Fill in the details to register your company.
       </p>
@@ -97,11 +117,13 @@ export default function CreateCompany() {
             required
           />
         </div>
-		<button
-		 type="submit"
-		 className="w-full font-medium bg-inidgo-light text-white py-2 rounded-md hover:bg-inidgo-light/90 transition-colors">
-				 Sign Up
-				</button>
+
+        <button
+          type="submit"
+          className="w-full font-medium bg-inidgo-light text-white py-2 rounded-md hover:bg-inidgo-light/90 transition-colors"
+        >
+          Sign Up
+        </button>
       </form>
     </div>
   );
