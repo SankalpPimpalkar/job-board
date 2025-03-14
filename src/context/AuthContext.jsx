@@ -1,16 +1,15 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { account } from "../appwrite/config"; // Import account from your Appwrite config
+import { account } from "../appwrite/config"; 
+import { useNavigate } from "react-router-dom";
 
 // Create Context
 const AuthContext = createContext();
-
-// Custom Hook for using context easily
-export const useAuth = () => useContext(AuthContext);
 
 // Auth Provider
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate()
 
     // Check if the user is logged in when the app loads
     useEffect(() => {
@@ -46,6 +45,7 @@ export const AuthProvider = ({ children }) => {
         try {
             await account.deleteSession("current");
             setUser(null);
+            navigate('/auth/login')
         } catch (error) {
             console.log("Failed to logout:", error);
         }
@@ -57,3 +57,5 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+export const useAuth = () => useContext(AuthContext);
