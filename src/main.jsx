@@ -6,10 +6,10 @@ import App from "./App.jsx";
 import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("root")).render(
-	<AuthProvider>
-		<BrowserRouter>
+	<BrowserRouter>
+		<AuthProvider>
 			<App />
-		</BrowserRouter>
-		<Toaster />
-	</AuthProvider>
+			<Toaster />
+		</AuthProvider>
+	</BrowserRouter>
 );

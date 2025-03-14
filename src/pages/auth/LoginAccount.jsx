@@ -89,7 +89,7 @@ export default function LoginAccount() {
 				Don't have an account?{" "}
 				<Link
 					to={"/auth/create"}
-					className=" font-semibold hover:underline focus:outline-none"
+					className="text-inidgo-light font-semibold hover:underline focus:outline-none"
 				>
 					Create Account
 				</Link>
