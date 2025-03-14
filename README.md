@@ -1,12 +1,18 @@
-# React + Vite
+# Job Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A platform to seek jobs related to your job category. This job board helps users find jobs that match their skills and interests, making job searching easier and more efficient.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🏢 **Job Listings** – Browse through job postings based on different categories.  
+- 🔍 **Job Search** – Find jobs using keywords, location, and category filters.  
+- 👤 **User Profiles** – Create and manage your profile to apply for jobs easily.  
+- 📌 **Save Jobs** – Bookmark job posts for later reference.  
+- 📝 **Apply for Jobs** – Submit applications directly through the platform.  
+- 📢 **Post Jobs** – Employers can list job openings.  
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:  
+   ```sh
+   git clone https://github.com/yourusername/job-board.git
