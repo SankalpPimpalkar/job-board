@@ -6,7 +6,7 @@ function Jobsection() {
   return (
     <section className="bg-gray-100 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4 drop-shadow-lg">
           Find Your Dream Job Today
         </h1>
         <p className="text-lg text-gray-600 mb-8">
@@ -19,14 +19,14 @@ function Jobsection() {
         <input
        type="text"
         placeholder="Job title, keywords, or company"
-         className="w-full max-w-xs px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none shadow-sm"
+         className="w-full max-w-xs px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400 focus:outline-none shadow-sm bg-white"
        />
 
 
           <input
             type="text"
             placeholder="City, state, or remote"
-            className="w-full max-w-xs px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400  focus:outline-none"
+            className="w-full max-w-xs px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-400  focus:outline-none bg-white"
           />
              <button className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-black transition shadow-md transform hover:scale-105">
              <Search className="h-5 w-5 inline mr-1 " />

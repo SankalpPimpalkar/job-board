@@ -1,4 +1,4 @@
-// src/components/BrowseCategories.jsx
+
 import React from "react";
 import { FaCode, FaPencilRuler, FaBriefcase, FaUniversity, FaHeartbeat, FaGraduationCap, FaBuilding, FaThLarge } from "react-icons/fa";
 
@@ -17,17 +17,17 @@ function BrowsCategories() {
   return (
     <div className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
-        {/* Heading */}
+       
         <h2 className="text-2xl font-bold text-center mb-8">
           Browse Jobs by Category
         </h2>
 
-        {/* Grid Container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
           {categories.map((category) => (
             <div
               key={category.id}
-              className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-3 transition-transform transform hover:scale-105 cursor-pointer"
+              className="bg-white p-6 rounded-lg shadow-md flex flex-col  hover:bg-gray-200 items-center space-y-3 transition-transform transform hover:scale-105 cursor-pointer"
             >
               <div className="text-4xl text-gray-800">{category.icon}</div>
               <h3 className="text-lg font-semibold text-gray-800">

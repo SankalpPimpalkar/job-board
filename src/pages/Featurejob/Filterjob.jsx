@@ -26,7 +26,7 @@ function Filterjob() {
 	};
 
 	return (
-		<div className="bg-white p-6 shadow-md rounded-lg w-full md:w-64 lg:w-72 md:max-w-xs text-left">
+		<div className="bg-white p-6  rounded-lg w-full md:w-64 lg:w-72 md:max-w-xs text-left">
 			<h2 className="text-xl font-semibold text-gray-800 mb-4 ">
 				Filter Jobs
 			</h2>
@@ -56,7 +56,7 @@ function Filterjob() {
 										]
 									}
 									onChange={handleCheckboxChange}
-									className="w-4 h-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+									className="w-4 h-4 text-gray-800 focus:ring-gray-800  "
 								/>
 								<span>{type}</span>
 							</label>

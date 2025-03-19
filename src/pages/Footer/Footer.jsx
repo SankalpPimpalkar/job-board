@@ -4,7 +4,7 @@ import { Briefcase } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="mt-12 text-center text-gray-500 text-sm w-full">
+    <footer className="mt-12 text-center text-black text-sm w-full">
      
       <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4 px-4 py-4 border-t border-gray-300">
 

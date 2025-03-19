@@ -12,14 +12,15 @@ export default function Home() {
 		<div>
 			<Navbar />
 			<Jobsection />
-			<div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row p-4">
-				<div className="w-full lg:w-1/4">
-					<Filterjob />
-				</div>
-				<div className="w-full lg:w-3/4">
-					<FeatureJobCard />
-				</div>
-			</div>
+			<div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-6 p-4">
+	    <div className="w-full lg:w-1/4 mt-6">
+		<Filterjob />
+	    </div>
+	 <div className="w-full lg:w-3/4">
+		<FeatureJobCard />
+	</div>
+</div>
+
 
 			<div>
 				<BrowsCategories />
